@@ -1,9 +1,10 @@
+from abc import ABC
 from datetime import datetime
 from typing import List, Dict, Any
 from ticket_type import TicketType
 
 
-class Movie:
+class Movie(ABC):
     """
     This class represents a movie showing.
     """
@@ -31,6 +32,18 @@ class ComedyMovie(Movie):
 class DramaMovie(Movie):
     def get_category(self):
         return "Drama"
+
+class FantasyMovie(Movie):
+    def get_category(self):
+        return "Fantasy"
+    
+class HorrorMovie(Movie):
+    def get_category(self):
+        return "Horror"
+    
+class ScifiMovie(Movie):
+    def get_category(self):
+        return "Sci-fi"
 
 # دالة لتحديد نوع الفيلم
 def print_movie_category(movie: Movie):
