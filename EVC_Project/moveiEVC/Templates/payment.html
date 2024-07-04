@@ -29,7 +29,7 @@
     
     <div class="container mt-4">
         <div id="success-message" class="alert alert-success d-none" role="alert">
-            Movie successfully booked!
+            Enjoy your movie🎬⭐!
         </div>
         <div class="card">
             <div class="card-header">Payment Information</div>
@@ -69,6 +69,7 @@
         </nav>
     </footer>
     
+   
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const selectedTime = localStorage.getItem('selectedTime') || 'Not selected';
@@ -77,7 +78,13 @@
             const paymentForm = document.getElementById('payment-form');
             paymentForm.addEventListener('submit', function(event) {
                 event.preventDefault();
+                
+                // Generate a random reservation number
+                const reservationNumber = Math.floor(10000 + Math.random() * 90000);
+                
                 // Simulate successful payment submission
+                document.getElementById('success-message').textContent = 
+                    `Payment successful! Your reservation number is ${reservationNumber} ,Enjoy your movie🎬⭐!.`;
                 document.getElementById('success-message').classList.remove('d-none');
                 paymentForm.classList.add('d-none');
             });
